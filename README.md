@@ -5,6 +5,7 @@ The `_starter_files` folder contains all the lessons in order, starting from `01
 # Original repository 🔑
 
 Author: Brad traversy
-Link: ![https://github.com/bradtraversy/php-crash](https://github.com/bradtraversy/php-crash)
+<br />
+Link: [Brad Travery's PHP Course](https://github.com/bradtraversy/php-crash)
 
 # Have fun coding 🚀
