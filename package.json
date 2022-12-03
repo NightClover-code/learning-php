@@ -1,0 +1,12 @@
+{
+  "name": "learn-php",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NightClover-code/learning-php",
+  "author": "Achraf Elmouhib <elmouhib2003achraf@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.19.2",
+    "prettier": "^2.8.0"
+  }
+}

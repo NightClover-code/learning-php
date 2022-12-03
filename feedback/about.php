@@ -1,4 +1,4 @@
-<?php include 'inc/header.php' ?>
+<?php include 'inc/header.php'; ?>
 
 <h2>About</h2>
 
@@ -9,4 +9,4 @@
   ratione voluptatem esse quos quam?
 </p>
 
-<?php include 'inc/footer.php' ?>
+<?php include 'inc/footer.php'; ?>

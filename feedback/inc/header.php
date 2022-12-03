@@ -1,4 +1,4 @@
-<?php include 'config/database.php' ?>
+<?php include 'config/database.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +23,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/learn-php/feedback/index.html">Home</a>
+            <a class="nav-link" href="/learn-php/feedback/index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/learn-php/feedback/feedback.html">Feedback</a>
+            <a class="nav-link" href="/learn-php/feedback/feedback.php">Feedback</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/learn-php/feedback/about.html">About</a>
+            <a class="nav-link" href="/learn-php/feedback/about.php">About</a>
           </li>
         </ul>
       </div>
