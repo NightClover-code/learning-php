@@ -1,6 +1,6 @@
 # Introduction to PHP 📕
 
-The `_starter_files` folder contains all the lessons in order, starting from `01_output.php` to `17_oop.php`.
+All the lessons are in order, starting from `01_output.php` to `17_oop.php`.
 
 # Original repository 🔑
 
