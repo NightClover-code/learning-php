@@ -2,6 +2,8 @@
 
 All the lessons are in order, starting from `01_output.php` to `17_oop.php`.
 
+The `feedback` folder contains a small project using an `sql` database.
+
 # Original repository 🔑
 
 Author: Brad traversy
