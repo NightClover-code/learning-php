@@ -3,11 +3,9 @@ include './db-config.php';
 
 if (isset($_POST['submit'])) {
   // validate and sanitize input data
-  $pseudo = filter_input(
-  INPUT_POST,
-    'pseudo',
-  FILTER_SANITIZE_FULL_SPECIAL_CHARS
-  );
+  $pseudo = isset($_POST['pseudo']) ? 
+    filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_FULL_SPECIAL_CHARS) :
+    $_COOKIE['name'];
 
   $message = filter_input(
   INPUT_POST,
@@ -16,6 +14,9 @@ if (isset($_POST['submit'])) {
   );
 
   if ($pseudo && $message) {
+    //save user to browser
+    setcookie('name', $pseudo, time() + 86400 * 30);
+
     // create prepared statement
     $stmt = mysqli_prepare($conn, "INSERT INTO messages (author, content) VALUES (?, ?)");
 

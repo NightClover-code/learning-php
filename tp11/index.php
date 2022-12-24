@@ -4,7 +4,7 @@
 $pseudoErr = $messageErr = '';
 
 if (isset($_POST['submit'])) {
-  if (empty($_POST['pseudo'])) {
+  if (empty($_POST['pseudo']) && empty($_COOKIE['name'])) {
     $pseudoErr = 'Pseudo is required!';
   }
 
@@ -27,14 +27,14 @@ if (isset($_POST['submit'])) {
 
 <body>
   <div class="container">
-    <form
-      action="<?php echo isset($_POST['submit']) && empty($pseudoErr) && empty($messageErr) ? 'enregistrer.php' : htmlspecialchars($_SERVER['PHP_SELF']); ?>"
-      method="POST">
-      <div class="in put__container">
+    <form action="enregistrer.php" method="POST">
+      <?php if (!isset($_COOKIE['name'])): ?>
+      <div class="input__container">
         <label for="pseudo">Pseudo: </label>
         <input type="text" name="pseudo" id="pseudo">
         <span style="color: red"><?php echo $pseudoErr ?></span>
       </div>
+      <?php endif; ?>
 
       <div class="input__container">
         <label for="message">Message: </label>
