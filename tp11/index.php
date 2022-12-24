@@ -35,14 +35,15 @@ $messageErr = isset($_GET['messageErr']) ? $_GET['messageErr'] : '';
 
       <input type="submit" name="submit" value="Envoyer">
 
-      <?php
-      $fetch_query = "SELECT author, content FROM messages ORDER BY id DESC LIMIT 10";
-      $result = mysqli_query($conn, $fetch_query);
+      <div id="messages">
+        <?php
+        $fetch_query = "SELECT author, content FROM messages ORDER BY id DESC LIMIT 10";
+        $result = mysqli_query($conn, $fetch_query);
 
-      if (mysqli_num_rows($result) == 0) {
-        echo "<p>Pas de messages!</p>";
-      } else {
-        echo "
+        if (mysqli_num_rows($result) == 0) {
+          echo "<p>Pas de messages!</p>";
+        } else {
+          echo "
           <style>
             ul{
               list-style: none;
@@ -55,18 +56,35 @@ $messageErr = isset($_GET['messageErr']) ? $_GET['messageErr'] : '';
               font-weight: bold;
             }
           </style>";
-        echo "<ul>";
-        while ($item = mysqli_fetch_assoc($result)) {
-          echo "<li>";
-          echo "<span>{$item['author']}: </span>";
-          echo "{$item['content']}";
-          echo "</li>";
+          echo "<ul>";
+          while ($item = mysqli_fetch_assoc($result)) {
+            echo "<li>";
+            echo "<span>{$item['author']}: </span>";
+            echo "{$item['content']}";
+            echo "</li>";
+          }
+          echo "</ul>";
         }
-        echo "</ul>";
-      }
-      ?>
+        ?>
+      </div>
     </form>
   </div>
+
+  <script>
+    function loadMessages() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // update the messages div with the new messages
+          document.getElementById('messages').innerHTML = xhr.responseText;
+        }
+      };
+      xhr.open('GET', 'get-messages.php', true);
+      xhr.send();
+    }
+
+    setInterval(loadMessages, 1000);
+  </script>
 </body>
 
 </html>
