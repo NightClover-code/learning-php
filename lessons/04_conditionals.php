@@ -5,14 +5,14 @@
 /* ------------ Operators ----------- */
 
 /*
-  < Less than
-  > Greater than
-  <= Less than or equal to
-  >= Greater than or equal to
-  == Equal to
-  === Identical to
-  != Not equal to
-  !== Not identical to
+< Less than
+> Greater than
+<= Less than or equal to
+>= Greater than or equal to
+== Equal to
+=== Identical to
+!= Not equal to
+!== Not identical to
 */
 
 /* ---------- If Statements --------- */
@@ -20,7 +20,7 @@
 /*
 ** If Statement Syntax
 if (condition) {
-  // code to be executed if condition is true
+// code to be executed if condition is true
 }
 */
 
@@ -58,9 +58,9 @@ if (!empty($posts[0])) {
 
 /* -------- Ternary Operator -------- */
 /*
-  The ternary operator is a shorthand if statement.
-  Ternary Syntax:
-    condition ? true : false;
+The ternary operator is a shorthand if statement.
+Ternary Syntax:
+condition ? true : false;
 */
 
 // Echo based on a condition (Same as above)

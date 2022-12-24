@@ -2,7 +2,7 @@
 /* ----------- Arrrays ----------- */
 
 /*
-  If you need to store multiple values, you can use arrays. Arrays hold "elements"
+If you need to store multiple values, you can use arrays. Arrays hold "elements"
 */
 
 // Simple array of numbers
@@ -24,7 +24,7 @@ var_dump($numbers);
 /* ------ Associative Arrays ----- */
 
 /*
-  Associative arrays allow us to use named keys to identify values.
+Associative arrays allow us to use named keys to identify values.
 */
 
 $colors = [
@@ -48,7 +48,7 @@ var_dump($hex);
 /* ---- Multi-dimensional arrays ---- */
 
 /*
-  Multi-dimansional arrays are often used to store data in a table format.
+Multi-dimansional arrays are often used to store data in a table format.
 */
 
 // Single person
@@ -60,7 +60,8 @@ $person1 = [
 
 // Array of people
 $people = [
-  $person1, //   [...$person1]
+  $person1,
+  //   [...$person1]
   [
     'first_name' => 'John',
     'last_name' => 'Doe',

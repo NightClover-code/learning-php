@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+}
+
+.input__container {
+  margin-bottom: 10px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+.container {
+  width: 750px;
+  margin: 80px auto;
+}
+
+button {
+  margin: 0 200px;
+}
