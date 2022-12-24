@@ -1,17 +1,8 @@
 <?php include './db-config.php' ?>
 
 <?php
-$pseudoErr = $messageErr = '';
-
-if (isset($_POST['submit'])) {
-  if (empty($_POST['pseudo']) && empty($_COOKIE['name'])) {
-    $pseudoErr = 'Pseudo is required!';
-  }
-
-  if (empty($_POST['message'])) {
-    $messageErr = 'Message is required!';
-  }
-}
+$pseudoErr = isset($_GET['pseudoErr']) ? $_GET['pseudoErr'] : '';
+$messageErr = isset($_GET['messageErr']) ? $_GET['messageErr'] : '';
 ?>
 
 <!DOCTYPE html>

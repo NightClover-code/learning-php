@@ -1,7 +1,19 @@
 <?php
 include './db-config.php';
 
+
 if (isset($_POST['submit'])) {
+  // error handling
+  $pseudoErr = $messageErr = '';
+
+  if (empty($_POST['pseudo']) && empty($_COOKIE['name'])) {
+    $pseudoErr = 'Pseudo is required!';
+  }
+
+  if (empty($_POST['message'])) {
+    $messageErr = 'Message is required!';
+  }
+
   // validate and sanitize input data
   $pseudo = isset($_POST['pseudo']) ? 
     filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_FULL_SPECIAL_CHARS) :
@@ -38,6 +50,12 @@ if (isset($_POST['submit'])) {
       // redirect to index.php
       header('Location: index.php');
     }
+  }
+
+  // send back errors to index.php
+  if (!empty($pseudoErr) || !empty($messageErr)) {
+    header('Location: index.php?pseudoErr=' . urlencode($pseudoErr) . '&messageErr=' . urlencode($messageErr));
+    exit;
   }
 }
 ?>
